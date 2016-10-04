@@ -1,0 +1,31 @@
+body {
+    background-color: #092b40;
+}
+
+.randomArticle {
+    margin-top: 15%;
+    text-align: center;
+    color: #D96F32;
+    font-size: x-large;
+}
+
+.randomArticle a {
+    color: #D96F32;
+}
+
+.randomArticle a:hover {
+    color: #D96F32;
+    text-decoration: none;
+}
+
+.info{
+    text-align: center;
+    color: #D96F32;
+    font-size: x-large;
+}
+
+.searchForm{
+    background-color: #092b40;
+
+    color:#D96F32;
+}
