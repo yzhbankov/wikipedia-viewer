@@ -37,8 +37,16 @@ search.addEventListener("click", function () {
     searchField.appendChild(xbutton);
 });
 
-xbutton.addEventListener("click", function(){
+/*xbutton.addEventListener("click", function(){
    $("#xbutton").remove();
+});*/
+
+$(function() {
+    $(".searchForm").focus(function(){
+        $(this).animate({ width:"500px"}, 1000);
+    }).blur(function(){
+        $(this).animate({ width:"250px"}, 500);
+    });
 });
 
 function showArticle(data) {
