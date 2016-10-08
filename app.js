@@ -54,7 +54,7 @@ function showArticle(data) {
     var container = document.querySelector(".container");
     for (var i = 0; i < 10; i++) {
         var aTag = document.createElement("a");
-        aTag.setAttribute("href", "https://en.wikipedia.org/wiki/" + + data.query.search[i].title);
+        aTag.setAttribute("href", "https://en.wikipedia.org/wiki/" + data.query.search[i].title);
         aTag.setAttribute("target", "_blank");
         var node = document.createElement("div");
         node.setAttribute("class", "article");
