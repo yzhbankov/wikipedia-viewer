@@ -40,7 +40,11 @@ search.addEventListener("click", function () {
             searchField.appendChild(xbutton);
             xbutton.addEventListener("click", function () {
                 $(".container").empty();
-                $(".randomArticle").css("margin-top", "20%");
+                if ($(window).width() > 740) {
+                    $(".randomArticle").css("margin-top", "20%");
+                } else {
+                    $(".randomArticle").css("margin-top", "70%");
+                }
                 $(".searchForm").val("");
                 $("#xbutton").hide();
                 fieldCollapse();

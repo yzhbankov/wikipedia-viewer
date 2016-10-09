@@ -66,3 +66,20 @@ a:link, a:visited{
     right:21%;
     cursor:pointer;
 }
+
+@media screen and (max-width: 740px) {
+    .randomArticle {
+        margin-top: 70%;
+        text-align: center;
+        color: #D96F32;
+        font-size: large;
+    }
+
+    #xbutton{
+        color: #D96F32;
+        position: absolute;
+        top: 19%;
+        right:12%;
+        cursor:pointer;
+    }
+}
