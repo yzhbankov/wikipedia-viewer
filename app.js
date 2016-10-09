@@ -3,7 +3,7 @@
  */
 var search = document.querySelector("input");
 var searchField = document.querySelector(".searchField");
-var xbutton = document.querySelector("#xbutton");
+var searchForm = document.querySelector(".searchForm");
 
 search.addEventListener("keypress", function (event) {
     if (event.which == 13) {
@@ -30,24 +30,37 @@ search.addEventListener("keypress", function (event) {
 });
 
 search.addEventListener("click", function () {
+    if (!document.getElementById("xbutton")){
     var xbutton = document.createElement("div");
     var textButton = document.createTextNode("X");
     xbutton.setAttribute("id","xbutton");
     xbutton.appendChild(textButton);
     searchField.appendChild(xbutton);
+    xbutton.addEventListener("click", function(){
+        $(".container").empty();
+        $(".randomArticle").css("margin-top", "15%");
+        $(".searchForm").val("");
+        $("#xbutton").hide();
+    });} else {
+        $("#xbutton").show();
+        xbutton.addEventListener("click", function(){
+            $(".container").empty();
+            $(".randomArticle").css("margin-top", "15%");
+            $(".searchForm").val("");
+            $("#xbutton").hide();
+        });
+    }
 });
 
-/*xbutton.addEventListener("click", function(){
-   $("#xbutton").remove();
-});*/
 
-$(function() {
+
+/*$(function() {
     $(".searchForm").focus(function(){
         $(this).animate({ width:"500px"}, 1000);
     }).blur(function(){
         $(this).animate({ width:"250px"}, 500);
     });
-});
+});*/
 
 function showArticle(data) {
     $(".randomArticle").css("margin-top", "5%");
@@ -62,13 +75,5 @@ function showArticle(data) {
         container.appendChild(aTag);
         var lastarticle = document.getElementsByClassName("article")[i];
         lastarticle.innerHTML = "<b><h4>" + data.query.search[i].title + "</h4></b> \n" + data.query.search[i].snippet;
-
-        /*var node = document.createElement("div");
-        node.setAttribute("id", "article_" + i);
-        node.setAttribute("class", "article");
-        container.appendChild(node);
-        var lastarticle = document.getElementsByClassName("container")[0].lastChild;
-        lastarticle.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + data.query.search[i].title + "' target='_blank' >" + "<b><h4>" + data.query.search[i].title +
-            "</h4></b> \n" + data.query.search[i].snippet + "</a>";*/
     }
 }
