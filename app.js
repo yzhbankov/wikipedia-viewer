@@ -3,7 +3,7 @@
  */
 var search = document.querySelector("input");
 var searchField = document.querySelector(".searchField");
-var searchForm = document.querySelector(".searchForm");
+
 
 search.addEventListener("keypress", function (event) {
     if (event.which == 13) {
@@ -30,37 +30,45 @@ search.addEventListener("keypress", function (event) {
 });
 
 search.addEventListener("click", function () {
-    if (!document.getElementById("xbutton")){
-    var xbutton = document.createElement("div");
-    var textButton = document.createTextNode("X");
-    xbutton.setAttribute("id","xbutton");
-    xbutton.appendChild(textButton);
-    searchField.appendChild(xbutton);
-    xbutton.addEventListener("click", function(){
-        $(".container").empty();
-        $(".randomArticle").css("margin-top", "15%");
-        $(".searchForm").val("");
-        $("#xbutton").hide();
-    });} else {
-        $("#xbutton").show();
-        xbutton.addEventListener("click", function(){
-            $(".container").empty();
-            $(".randomArticle").css("margin-top", "15%");
-            $(".searchForm").val("");
-            $("#xbutton").hide();
-        });
-    }
+    fieldExpansion();
+    setTimeout(function () {
+        if (!document.getElementById("xbutton")) {
+            var xbutton = document.createElement("div");
+            var textButton = document.createTextNode("X");
+            xbutton.setAttribute("id", "xbutton");
+            xbutton.appendChild(textButton);
+            searchField.appendChild(xbutton);
+            xbutton.addEventListener("click", function () {
+                $(".container").empty();
+                $(".randomArticle").css("margin-top", "20%");
+                $(".searchForm").val("");
+                $("#xbutton").hide();
+                fieldCollapse();
+            });
+        } else {
+            $("#xbutton").show();
+        }
+    }, 500);
+
 });
 
+function fieldExpansion() {
+    if ($('.searchForm').css("width") == "100px") {
+        $('.searchForm').animate({
+            width: "+=230px"
+        }, 500, function () {
+        });
+    }
+}
+function fieldCollapse() {
+    if ($('.searchForm').css("width") == "330px") {
+        $('.searchForm').animate({
+            width: "-=230px"
+        }, 500, function () {
+        });
+    }
+}
 
-
-/*$(function() {
-    $(".searchForm").focus(function(){
-        $(this).animate({ width:"500px"}, 1000);
-    }).blur(function(){
-        $(this).animate({ width:"250px"}, 500);
-    });
-});*/
 
 function showArticle(data) {
     $(".randomArticle").css("margin-top", "5%");

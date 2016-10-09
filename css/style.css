@@ -3,10 +3,10 @@ body {
 }
 
 .randomArticle {
-    margin-top: 15%;
+    margin-top: 20%;
     text-align: center;
     color: #D96F32;
-    font-size: x-large;
+    font-size: large;
 }
 
 .randomArticle a {
@@ -21,13 +21,22 @@ body {
 .info{
     text-align: center;
     color: #D96F32;
-    font-size: x-large;
+    font-size: large;
 }
 
 .searchForm{
     background-color: #092b40;
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: #beeaff;
     color:#D96F32;
+    height:30px;
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 
 .article{
     background-color: #E7E7E8;
@@ -53,7 +62,7 @@ a:link, a:visited{
 #xbutton{
     color: #D96F32;
     position: absolute;
-    top: 25%;
-    right:5%;
+    top: 32%;
+    right:21%;
     cursor:pointer;
 }
