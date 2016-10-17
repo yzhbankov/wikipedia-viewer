@@ -8,9 +8,17 @@ body {
     color: #D96F32;
     font-size: large;
 }
+@-webkit-keyframes pulsate {
+    50% { color: #D96F32; text-shadow: 0 -1px rgba(0,0,0,0.3), 0 0 5px #D96F32, 0 0 8px #D96F32; }
+}
+
 
 .randomArticle a {
     color: #D96F32;
+    font-size: xx-large;
+    text-shadow: 0 -1px rgba(0,0,0,0.9);
+    -webkit-animation: pulsate 2s linear infinite;
+    animation: pulsate 2s linear infinite;
 }
 
 .randomArticle a:hover {
@@ -21,7 +29,7 @@ body {
 .info{
     text-align: center;
     color: #D96F32;
-    font-size: large;
+    font-size: medium;
 }
 
 .searchForm{
@@ -31,7 +39,7 @@ body {
     border-color: #beeaff;
     color:#D96F32;
     height:30px;
-    width: 100px;
+    width: 150px;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -63,8 +71,13 @@ a:link, a:visited{
     color: #D96F32;
     position: absolute;
     top: 32%;
-    right:26%;
+    right:21%;
     cursor:pointer;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 20%;
 }
 
 @media screen and (max-width: 740px) {
@@ -81,5 +94,9 @@ a:link, a:visited{
         top: 19%;
         right:9%;
         cursor:pointer;
+    }
+    .footer{
+        text-align: center;
+        margin-top: 65%;
     }
 }

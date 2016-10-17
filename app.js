@@ -57,9 +57,9 @@ search.addEventListener("click", function () {
 });
 
 function fieldExpansion() {
-    if ($('.searchForm').css("width") == "100px") {
+    if ($('.searchForm').css("width") == "150px") {
         $('.searchForm').animate({
-            width: "+=230px"
+            width: "+=180px"
         }, 500, function () {
         });
     }
@@ -67,7 +67,7 @@ function fieldExpansion() {
 function fieldCollapse() {
     if ($('.searchForm').css("width") == "330px") {
         $('.searchForm').animate({
-            width: "-=230px"
+            width: "-=180px"
         }, 500, function () {
         });
     }
