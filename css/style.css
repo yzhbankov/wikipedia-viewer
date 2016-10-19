@@ -77,7 +77,9 @@ a:link, a:visited{
 
 .footer{
     text-align: center;
-    margin-top: 20%;
+    color: white;
+    font-size: x-small;
+    margin-top: 1%;
 }
 
 @media screen and (max-width: 740px) {
@@ -97,6 +99,8 @@ a:link, a:visited{
     }
     .footer{
         text-align: center;
-        margin-top: 65%;
+        color: white;
+        font-size: x-small;
+        margin-top: 3%;
     }
 }
